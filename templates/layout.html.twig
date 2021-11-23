@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+    {% block stylesheets %}
+        <!-- CSS -->
+        <link href="/css/fl.css" rel="stylesheet">
+        <!-- FONT -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {% endblock %}
+
+    {% block javascripts %}
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/0709ae03e6.js" crossorigin="anonymous"></script>
+    {% endblock %}
+    
+    {% block body %}
+        <section>
+            <div class="container">
+                <header>
+                    <!-- LOGO -->
+                    <div class="header-left">
+                        <h1>Furalys Library</h1>
+                    </div>
+                    <!-- MENU -->
+                    <div class="header-right">
+                        <nav>
+                            <a href="#">Search</a>
+                            <a href="#">Artists</a>
+                            <a href="#">Categories</a>
+                            <a href="#">Own Creations</a>
+                        </nav>
+                    </div>
+                </header>
+                <!-- HERO BANNER -->
+                <div class="hero">
+                    <div class="hero-left">
+                        <img src="/img/pages/hero-left.png" alt="photo de Furalys">
+                    </div>
+                    <div class="hero-right">
+                        <div class="bloc-text">
+                            <span>Personal library of the artists I like the most</span>
+                            <h1>LIVE 2D<br/>VTUBER<br/>2D ANIMATION</h1>
+                            <p>
+                                Hello there I'm Furalys, but you can call me "Fura". I like to draw and watch other 
+                                drawing too so I decided to make my own library to study the work of the artists I like 
+                                a lot.
+                            </p>
+                        </div>
+                        <div class="bloc-button">
+                            <div class="home-btn">
+                                <div class="what-new">
+                                    <a href="#">What's New<br/>
+                                        <i class="fas fa-arrow-down"></i>
+                                    </a>
+                                </div>
+                                <div class="twitter-icon">
+                                    <a href="https://twitter.com/furalys" target="_blank">Furalys' Twitter<br/>
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BODY -->
+                {% block container %}{% endblock %}
+                <!-- FOOTER -->
+                <footer>
+                    <div class="footer-links">
+                        <div class="">
+                            <span class="copyright">Copyright &copy; Furalys 2021</span>
+                        </div>
+                        <div class="">
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>        
+    {% endblock %}

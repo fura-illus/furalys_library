@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+section {
+    background: linear-gradient(136.16deg, 
+    rgba(46, 9, 22, 0.97) 12.91%, 
+    rgba(32, 10, 43, 0.69) 87.68%
+    );
+    height: 100vh;
+}
+
+section .container {
+    height: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+section .container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+section .container nav {
+    display: flex;
+    flex-direction: row;
+}
+
+section .container nav a {
+    margin-left: 60px;
+    color: white;
+    font-size: 18px;
+}
+
+section .container .hero {
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section .container .hero .hero-left{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .container .hero .hero-right{
+    padding-left: 150px;
+}
+
+section .container .hero .hero-right .bloc-text,
+section .container .hero .hero-right .bloc-button a {
+    color: white;
+}
+
+section .container .hero .hero-right .bloc-text span{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+section .container .hero .hero-right .bloc-text h1{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 68px;
+    line-height: 109%;
+    margin: 14px 0px;
+}
+
+section .container .hero .hero-right .bloc-text p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 180%;
+    margin: 25px 0px;
+}
+
+section .container .hero .hero-right .bloc-button {
+    margin: 0 auto;
+    width: 50%;
+}
+
+section .container .hero .hero-right .bloc-button .home-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .container .hero .hero-right .bloc-button .what-new {
+    padding: 10px 20px;
+}
+
+section .container .hero .hero-right .bloc-button .what-new i {
+    margin-left: 40px;
+}
+
+section .container .hero .hero-right .bloc-button .twitter-icon {
+    padding: 10px 20px;
+}
+
+section .container .hero .hero-right .bloc-button .twitter-icon i {
+    margin-left: 40px;
+}
