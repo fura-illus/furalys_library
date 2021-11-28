@@ -103,18 +103,15 @@ section .container .hero .hero-right .bloc-button .home-btn {
     align-items: center;
 }
 
-section .container .hero .hero-right .bloc-button .what-new {
-    padding: 10px 20px;
-}
-
-section .container .hero .hero-right .bloc-button .what-new i {
-    margin-left: 40px;
-}
-
+section .container .hero .hero-right .bloc-button .latest,
 section .container .hero .hero-right .bloc-button .twitter-icon {
     padding: 10px 20px;
 }
 
-section .container .hero .hero-right .bloc-button .twitter-icon i {
-    margin-left: 40px;
+section .container .hero .hero-right .bloc-button .latest a,
+section .container .hero .hero-right .bloc-button .twitter-icon a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

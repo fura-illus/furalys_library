@@ -3,9 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ImageRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=ImageRepository::class)
@@ -30,14 +29,10 @@ class Image
     private $file;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Post::class, mappedBy="image")
+     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="images")
+     * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
      */
-    private $posts;
-
-    public function __construct()
-    {
-        $this->posts = new ArrayCollection();
-    }
+    private $post;
 
     public function getId(): ?int
     {
@@ -77,29 +72,14 @@ class Image
         return $this;
     }
 
-    /**
-     * @return Collection|Post[]
-     */
-    public function getPosts(): Collection
+    public function getPost(): ?Post
     {
-        return $this->posts;
+        return $this->post;
     }
 
-    public function addPost(Post $post): self
+    public function setPost(?Post $post): self
     {
-        if (!$this->posts->contains($post)) {
-            $this->posts[] = $post;
-            $post->addImage($this);
-        }
-
-        return $this;
-    }
-
-    public function removePost(Post $post): self
-    {
-        if ($this->posts->removeElement($post)) {
-            $post->removeImage($this);
-        }
+        $this->post = $post;
 
         return $this;
     }

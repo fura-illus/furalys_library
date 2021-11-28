@@ -20,26 +20,26 @@ class Post
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Artist::class, inversedBy="posts")
+     * @ORM\ManyToOne(targetEntity=Artist::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $artist;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Category::class, inversedBy="posts")
+     * @ORM\ManyToOne(targetEntity=Category::class, cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Image::class, inversedBy="posts")
+     * @ORM\OneToMany(targetEntity=Image::class, mappedBy="post", cascade={"persist"}, orphanRemoval=true)
      */
     private $images;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Video::class, inversedBy="posts")
+     * @ORM\OneToMany(targetEntity=Video::class, mappedBy="post", cascade={"persist"}, orphanRemoval=true)
      */
-    private $Videos;
+    private $videos;
 
     /**
      * @ORM\Column(type="datetime_immutable")
@@ -54,7 +54,7 @@ class Post
     public function __construct()
     {
         $this->images = new ArrayCollection();
-        $this->Videos = new ArrayCollection();
+        $this->videos = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -94,20 +94,24 @@ class Post
         return $this->images;
     }
 
-    public function addImage(Image $image): self
+    /**
+     * @param Image $image
+     * @return void
+     */
+    public function addImage(Image $image): void
     {
-        if (!$this->image->contains($image)) {
-            $this->image[] = $image;
-        }
-
-        return $this;
+        $image->setPost($this);
+        $this->images->add($image);
     }
 
-    public function removeImage(Image $image): self
+    /**
+     * @param Image $image
+     * @return void
+     */
+    public function removeImage(Image $image): void
     {
-        $this->image->removeElement($image);
-
-        return $this;
+        $image->setPost(null);
+        $this->images->removeElement($image);
     }
 
     /**
@@ -115,23 +119,27 @@ class Post
      */
     public function getVideos(): Collection
     {
-        return $this->Videos;
+        return $this->videos;
     }
 
-    public function addVideo(Video $video): self
+    /**
+     * @param Video $video
+     * @return void
+     */
+    public function addVideo(Video $video): void
     {
-        if (!$this->Video->contains($video)) {
-            $this->Video[] = $video;
-        }
-
-        return $this;
+        $video->setPost($this);
+        $this->videos->add($video);
     }
 
-    public function removeVideo(Video $video): self
+    /**
+     * @param Video $video
+     * @return void
+     */
+    public function removeVideo(Video $video): void
     {
-        $this->Video->removeElement($video);
-
-        return $this;
+        $video->setPost(null);
+        $this->videos->removeElement($video);
     }
 
     public function getAddedAt(): ?\DateTimeImmutable

@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\VideoRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -25,14 +23,10 @@ class Video
     private $url;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Post::class, mappedBy="Video")
+     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="videos")
+     * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
      */
-    private $posts;
-
-    public function __construct()
-    {
-        $this->posts = new ArrayCollection();
-    }
+    private $post;
 
     public function getId(): ?int
     {
@@ -51,29 +45,14 @@ class Video
         return $this;
     }
 
-    /**
-     * @return Collection|Post[]
-     */
-    public function getPosts(): Collection
+    public function getPost(): ?Post
     {
-        return $this->posts;
+        return $this->post;
     }
 
-    public function addPost(Post $post): self
+    public function setPost(?Post $post): self
     {
-        if (!$this->posts->contains($post)) {
-            $this->posts[] = $post;
-            $post->addVideo($this);
-        }
-
-        return $this;
-    }
-
-    public function removePost(Post $post): self
-    {
-        if ($this->posts->removeElement($post)) {
-            $post->removeVideo($this);
-        }
+        $this->post = $post;
 
         return $this;
     }

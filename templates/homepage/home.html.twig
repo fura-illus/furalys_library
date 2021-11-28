@@ -1,14 +1,11 @@
 {% extends 'layout.html.twig' %}
 
     {% block container %}
+        <!-- Post Section-->
         <div class="post-container">
-            <body>
-                <div class="post-1">
-                    <img src="" alt="">
-                </div>
-                <div class="post-2">
-                    <img src="" alt="">
-                </div>
-            </body>
+            <section class="post-list">
+                {{ include("homepage/post.html.twig") }}
+            </section>
+            <button class="load" href="#">Load More</button>
         </div>
     {% endblock %}
