@@ -12,52 +12,56 @@
     {% block javascripts %}
     <!-- JS -->
     <script src="https://kit.fontawesome.com/0709ae03e6.js" crossorigin="anonymous"></script>
+    <script src="/js/hide_empty_post.js"></script>
     {% endblock %}
     
     {% block body %}
-        <section>
+        <div class="section">
             <div class="container">
-                <header>
-                    <!-- LOGO -->
-                    <div class="header-left">
-                        <h1>Furalys Library</h1>
-                    </div>
-                    <!-- MENU -->
-                    <div class="header-right">
-                        <nav>
-                            <a href="#">Search</a>
-                            <a href="#">Artists</a>
-                            <a href="#">Categories</a>
-                            <a href="#">Own Creations</a>
-                        </nav>
-                    </div>
-                </header>
                 <!-- HERO BANNER -->
                 <div class="hero">
-                    <div class="hero-left">
-                        <img src="/img/pages/hero-left.png" alt="photo de Furalys">
-                    </div>
-                    <div class="hero-right">
-                        <div class="bloc-text">
-                            <span>Personal library of the artists I like</span>
-                            <h1>LIVE 2D<br/>VTUBER<br/>2D ANIMATION</h1>
-                            <p>
-                                Hello there I'm Furalys, but you can call me "Fura". I like to draw and watch other 
-                                drawing too so I decided to make my own library to study the work of the artists I like 
-                                a lot.
-                            </p>
+                    <header>
+                        <!-- LOGO -->
+                        <div class="header-left">
+                            <h1>Furalys Library</h1>
                         </div>
-                        <div class="bloc-button">
-                            <div class="home-btn">
-                                <div class="latest">
-                                    <a href="#">Latest<br/>
-                                        <i class="fas fa-arrow-down"></i>
-                                    </a>
-                                </div>
-                                <div class="twitter-icon">
-                                    <a href="https://twitter.com/furalys" target="_blank">Furalys' Twitter<br/>
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
+                        <!-- MENU -->
+                        <div class="header-right">
+                            <nav>
+                                <a href="#">Search</a>
+                                <a href="#">Artists</a>
+                                <a href="#">Categories</a>
+                                <a href="#">Own Creations</a>
+                            </nav>
+                        </div>
+                    </header>
+                    
+                    <div class="hero-content">
+                        <div class="hero-left">
+                            <img src="/img/pages/hero-left.png" alt="photo de Furalys">
+                        </div>
+                        <div class="hero-right">
+                            <div class="bloc-text">
+                                <span>Personal library of the artists I like</span>
+                                <h1>LIVE 2D<br/>VTUBER<br/>2D ANIMATION</h1>
+                                <p>
+                                    Hello there I'm Furalys, but you can call me "Fura". I like to draw and watch other 
+                                    drawing too so I decided to make my own library to study the work of the artists I like 
+                                    a lot.
+                                </p>
+                            </div>
+                            <div class="bloc-button">
+                                <div class="home-btn">
+                                    <div class="latest">
+                                        <a href="#post-thumbnail">Latest<br/>
+                                            <i class="fas fa-arrow-down"></i>
+                                        </a>
+                                    </div>
+                                    <div class="twitter-icon">
+                                        <a href="https://twitter.com/furalys" target="_blank">Furalys' Twitter<br/>
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -69,14 +73,16 @@
                 <!-- FOOTER -->
                 <footer>
                     <div class="footer-links">
-                        <div class="">
-                            <span class="copyright">Copyright &copy; Furalys 2021</span>
-                        </div>
-                        <div class="">
-                            <a href="#">Privacy Policy</a>
+                        <div class="test">
+                            <div>
+                                <span class="copyright">Copyright &copy; Furalys 2021</span>
+                            </div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                            </div>
                         </div>
                     </div>
                 </footer>
             </div>
-        </section>        
+        </div>        
     {% endblock %}

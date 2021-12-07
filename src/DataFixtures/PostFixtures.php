@@ -32,7 +32,7 @@ class PostFixtures extends Fixture
             "Illustration" => [
                 [
                     "image" => [
-                        "@_acguy__FFLDsiMaAAAdCj8.jfif"
+                        "@_acguy__FFLDsiMaAAAdCj8.png"
                     ],
                     "video" => [
                         ""
@@ -41,7 +41,7 @@ class PostFixtures extends Fixture
                 ],
                 [
                     "image" => [
-                        "artists-posts/@_Kmasaki_FFMJC9vagAArWA5.jfif"
+                        "@_Kmasaki_FFMJC9vagAArWA5.jfif"
                     ],
                     "video" => [
                         ""
@@ -50,7 +50,7 @@ class PostFixtures extends Fixture
                 ],
                 [
                     "image" => [
-                        "../../public/img/uploads/artists-posts/@Tiamant_Torriet_FFBbW7maUAAh-iC.jfif"
+                        "@Tiamant_Torriet_FFBbW7maUAAh-iC.jfif"
                     ],
                     "video" => [
                         ""
@@ -64,7 +64,7 @@ class PostFixtures extends Fixture
                         ""
                     ],
                     "video" => [
-                        "https://www.youtube.com/watch?v=zm1BIWQHBpY&list=PLxIOFcJ3sRhllsXz7t8TDL4lTdhPw__XA&index=1&ab_channel=Fura_illus"
+                        "https://drive.google.com/file/d/1WOjYc0hAGQJCFcMoNBjJxkf5kruddLMI/preview"
                     ],
                     "artist" => $artists["dya rikku"]
                 ]
@@ -75,7 +75,7 @@ class PostFixtures extends Fixture
                         ""
                     ],
                     "video" => [
-                        "https://www.youtube.com/watch?v=wmYgixyJ7gY&list=PLxIOFcJ3sRhmUFFVNAy42JIVznSjue-ON&index=1&ab_channel=Fura_illus"
+                        "https://drive.google.com/file/d/1VJSkMJ7Kjy7UJ5UTZp2lR42rcPe0rB76/preview"
                     ],
                     "artist" => $artists["DuDuLtv"]
                 ],
@@ -84,7 +84,7 @@ class PostFixtures extends Fixture
                         ""
                     ],
                     "video" => [
-                        "https://www.youtube.com/watch?v=2CD0xAtv9dA&list=PLxIOFcJ3sRhmUFFVNAy42JIVznSjue-ON&index=2&ab_channel=Fura_illus"
+                        "https://drive.google.com/file/d/19XSiOskwkFDanNv6zDlzMfxoZnfiMalN/preview"
                     ],
                     "artist" => $artists["sydsir"]
                 ]
@@ -95,7 +95,7 @@ class PostFixtures extends Fixture
                         ""
                     ],
                     "video" => [
-                        "https://www.youtube.com/watch?v=KC8-t1Ge5mo&list=PLxIOFcJ3sRhl0i9u4MywQl09EjIHtTTnZ&index=1&ab_channel=Fura_illus"
+                        "https://drive.google.com/file/d/1BHjkhK1H5qT97TfStj6JhYoO-GspMPyB/preview"
                     ],
                     "artist" => $artists["dya rikku"]
                 ]
@@ -126,7 +126,6 @@ class PostFixtures extends Fixture
                     $video->setUrl($videoData);
                     $urlVideo = $video->getUrl();
                     $ytUrl = "https://www.youtube.com/embed/";
-                    $dmUrl = "https://www.dailymotion.com/embed/video/";
                     if (preg_match("#youtube#", $urlVideo)) {
                         // regex to isolate a youtube url' id specifically
                         preg_match('#https:\/\/www\.youtube\.com\/watch\?v=(.+)#', $urlVideo, $matches);
@@ -134,13 +133,8 @@ class PostFixtures extends Fixture
                         // adding embed url to isolate id
                         $ytUrlVideo = $ytUrl . $ytId;
                         $video->setUrl($ytUrlVideo);
-                    } elseif (preg_match("#dailymotion#", $urlVideo)) {
-                        // regex to isolate a dailymotion url' id specifically
-                        preg_match('#https:\/\/www\.dailymotion\.com\/video\/(.+)#', $urlVideo, $matches);
-                        $dmId = $matches[1];
-                        // adding embed url to isolate id
-                        $dmUrlVideo = $dmUrl . $dmId;
-                        $video->setUrl($dmUrlVideo);
+                    } elseif (preg_match("#google#", $urlVideo)) {
+                        $video->setUrl($urlVideo);
                     }
                     $post->addVideo($video);
 

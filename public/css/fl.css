@@ -7,22 +7,21 @@
 }
 
 
-section {
+.section {
     background: linear-gradient(136.16deg, 
     rgba(46, 9, 22, 0.97) 12.91%, 
     rgba(32, 10, 43, 0.69) 87.68%
     );
-    height: 100vh;
 }
 
-section .container {
+.section .container {
     height: 100%;
     max-width: 80%;
     margin: 0 auto;
     padding-top: 50px;
 }
 
-section .container header {
+.section .container header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,18 +29,18 @@ section .container header {
     color: white;
 }
 
-section .container nav {
+.section .container nav {
     display: flex;
     flex-direction: row;
 }
 
-section .container nav a {
+.section .container nav a {
     margin-left: 60px;
     color: white;
     font-size: 18px;
 }
 
-section .container .hero {
+.section .container .hero .hero-content{
     height: 80%;
     display: flex;
     flex-direction: row;
@@ -49,24 +48,25 @@ section .container .hero {
     align-items: center;
 }
 
-section .container .hero .hero-left{
-    height: 80%;
+.section .container .hero .hero-content .hero-left{
+    padding-top: 220px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-section .container .hero .hero-right{
-    padding-left: 150px;
+.section .container .hero .hero-content .hero-right{
+    padding: 200px 0px 0px 150px;
 }
 
-section .container .hero .hero-right .bloc-text,
-section .container .hero .hero-right .bloc-button a {
+h1,
+.section .container .hero .hero-content .hero-right .bloc-text,
+.section .container .hero .hero-content .hero-right .bloc-button a {
     color: white;
 }
 
-section .container .hero .hero-right .bloc-text span{
+.section .container .hero .hero-content .hero-right .bloc-text span{
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -75,7 +75,7 @@ section .container .hero .hero-right .bloc-text span{
     text-transform: uppercase;
 }
 
-section .container .hero .hero-right .bloc-text h1{
+.section .container .hero .hero-content .hero-right .bloc-text h1{
     font-style: normal;
     font-weight: 900;
     font-size: 68px;
@@ -83,7 +83,7 @@ section .container .hero .hero-right .bloc-text h1{
     margin: 14px 0px;
 }
 
-section .container .hero .hero-right .bloc-text p{
+.section .container .hero .hero-content .hero-right .bloc-text p{
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -91,27 +91,62 @@ section .container .hero .hero-right .bloc-text p{
     margin: 25px 0px;
 }
 
-section .container .hero .hero-right .bloc-button {
+.section .container .hero .hero-content .hero-right .bloc-button {
     margin: 0 auto;
     width: 50%;
 }
 
-section .container .hero .hero-right .bloc-button .home-btn {
+.section .container .hero .hero-content .hero-right .bloc-button .home-btn {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-section .container .hero .hero-right .bloc-button .latest,
-section .container .hero .hero-right .bloc-button .twitter-icon {
+.section .container .hero .hero-content .hero-right .bloc-button .latest,
+.section .container .hero .hero-content .hero-right .bloc-button .twitter-icon {
     padding: 10px 20px;
 }
 
-section .container .hero .hero-right .bloc-button .latest a,
-section .container .hero .hero-right .bloc-button .twitter-icon a {
+.section .container .hero .hero-content .hero-right .bloc-button .latest a,
+.section .container .hero .hero-content .hero-right .bloc-button .twitter-icon a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.post-container {
+    padding-top: 300px;
+}
+
+.post-container .post-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#post-thumbnail.post-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.post-artist-name {
+    padding-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer-links .test{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 }
