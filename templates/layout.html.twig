@@ -13,6 +13,7 @@
     <!-- JS -->
     <script src="https://kit.fontawesome.com/0709ae03e6.js" crossorigin="anonymous"></script>
     <script src="/js/hide_empty_post.js"></script>
+    <script src="/js/search_bar.js"></script>
     {% endblock %}
     
     {% block body %}
@@ -28,10 +29,19 @@
                         <!-- MENU -->
                         <div class="header-right">
                             <nav>
-                                <a href="#">Search</a>
+                                <a href="#" class="search-link">Search</a>
                                 <a href="#">Artists</a>
                                 <a href="#">Categories</a>
                                 <a href="#">Own Creations</a>
+                                <div class="search hidden">
+                                    <button class="close-search">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <input type="text" class="input-search" placeholder="Search...">
+                                    <button class="search-btn">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
                             </nav>
                         </div>
                     </header>

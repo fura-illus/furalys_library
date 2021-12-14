@@ -1,3 +1,4 @@
+/* GENERAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
+/* HOMEPAGE */
 .section {
     background: linear-gradient(136.16deg, 
     rgba(46, 9, 22, 0.97) 12.91%, 
@@ -21,6 +22,11 @@
     padding-top: 50px;
 }
 
+/* header */
+header {
+    position: relative;
+}
+
 .section .container header {
     display: flex;
     flex-direction: row;
@@ -29,9 +35,11 @@
     color: white;
 }
 
+/* menu */
 .section .container nav {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .section .container nav a {
@@ -40,6 +48,60 @@
     font-size: 18px;
 }
 
+.section .container nav a:nth-child(4) {
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* search input */
+.search {
+    display: flex;
+    position: absolute; /* compared to header */
+    right: 500px;
+}
+
+.search .input-search {
+    border: 0;
+    padding: 10px;
+    font-size: 15px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+.search-btn {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 3px;
+}
+
+.search .input-search,
+.search-btn,
+button.close-search {
+    outline: none;
+}
+
+.search.active .input-search {
+    width: 200px;
+}
+
+button.close-search {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    padding: 15px;
+}
+
+/* hide and show search bar in search_bar.js */
+.hidden {
+    display: none;
+}
+
+
+
+/* hero banner */
 .section .container .hero .hero-content{
     height: 80%;
     display: flex;
@@ -116,6 +178,7 @@ h1,
     align-items: center;
 }
 
+/* posts */
 .post-container {
     padding-top: 300px;
 }
@@ -139,6 +202,7 @@ h1,
     padding-bottom: 15px;
 }
 
+/* footer */
 .footer-links {
     display: flex;
     justify-content: center;

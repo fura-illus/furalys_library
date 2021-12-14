@@ -4,10 +4,10 @@
             <h1>{{ post.artist.name }}</h1>
         </div>
         <div class="post-image">
-            <img src="{{ asset('img/uploads/artists-posts/'~post.images|first.path) }}" alt="" width="300" height="400" id="img-post-image">
+            <img src="{{ asset('img/uploads/artists-posts/'~post.images|first.path) }}" alt="" width="300" height="400" class="img-post">
         </div>
         <div class="post-video">
-            <iframe width="325" height="200" src="{{ post.videos|first.url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="vid-post-video">
+            <iframe width="325" height="200" src="{{ post.videos|first.url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="vid-post">
                 Votre navigateur ne peut pas lire la vidéo.
             </iframe>
         </div>

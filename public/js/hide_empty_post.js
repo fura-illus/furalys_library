@@ -1,8 +1,22 @@
-// fonctionne mais que pour le 1er post
-const image = document.getElementById('img-post-image');
-const image_src = document.getElementById('img-post-image').src;
+// hide empty images
+
 const result = 'img/uploads/artists-posts';
 
-if (image_src.match(result)) {
-    image.hidden = true;
-};
+const imagesArray = [];
+const images = document.querySelectorAll('.img-post');
+images.forEach(function(images) {
+    imagesArray.push(images)
+});
+console.log(imagesArray);
+
+
+imagesArray.forEach(function(imagesArray) {
+    if (imagesArray.currentSrc.match(result)) {
+        imagesArray.className = "img-post"
+    } else {
+        imagesArray.className = "hidden"
+    }
+});
+console.log(imagesArray);
+
+// hide empty videos
