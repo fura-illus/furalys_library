@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+    {% block container %}
+        <div class="hero">
+            <div class="hero-left">
+                <img src="/img/pages/hero-left.png" alt="photo de Furalys">
+            </div>
+            <div class="hero-right">
+                <div class="bloc-text">
+                    <span>Personal library of the artists I like</span>
+                    <h1>LIVE 2D<br/>VTUBER<br/>2D ANIMATION</h1>
+                    <p>
+                        Hello there I'm Furalys, but you can call me "Fura". I like to draw and watch other 
+                        drawing too so I decided to make my own library to study the work of the artists I like 
+                        a lot.
+                    </p>
+                </div>
+                <div class="bloc-button">
+                    <div class="home-btn">
+                        <div class="latest">
+                            <a href="#post-thumbnail">Latest<br/>
+                                <i class="fas fa-arrow-down"></i>
+                            </a>
+                        </div>
+                        <div class="twitter-icon">
+                            <a href="https://twitter.com/furalys" target="_blank">Furalys' Twitter<br/>
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Post Section-->
+        <div class="post-container">
+            <div class="post-list">
+                {{ include("homepage/post.html.twig") }}
+            </div>
+        </div>
+    {% endblock %}

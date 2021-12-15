@@ -6,6 +6,7 @@ use App\Repository\ArtistRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass=ArtistRepository::class)
@@ -32,17 +33,17 @@ class Artist
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $link;
+    private $avatar;
 
     /**
-     * @ORM\OneToMany(targetEntity=Post::class, mappedBy="artist", orphanRemoval=true)
+     * @var UploadedFile
      */
-    private $posts;
+    private $avatarFile;
 
-    public function __construct()
-    {
-        $this->posts = new ArrayCollection();
-    }
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $link;
 
     public function getId(): ?int
     {
@@ -73,6 +74,39 @@ class Artist
         return $this;
     }
 
+    public function getAvatar(): ?string
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(string $avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of file
+     * @return  UploadedFile
+     */ 
+    public function getAvatarFile()
+    {
+        return $this->avatarFile;
+    }
+
+    /**
+     * Set the value of file
+     * @param  UploadedFile  $file
+     * @return  self
+     */ 
+    public function setAvatarFile(UploadedFile $avatarFile)
+    {
+        $this->avatarFile = $avatarFile;
+
+        return $this;
+    }
+
     public function getLink(): ?string
     {
         return $this->link;
@@ -86,32 +120,10 @@ class Artist
     }
 
     /**
-     * @return Collection|Post[]
+     * @return string
      */
-    public function getPosts(): Collection
+    public function __toString()
     {
-        return $this->posts;
-    }
-
-    public function addPost(Post $post): self
-    {
-        if (!$this->posts->contains($post)) {
-            $this->posts[] = $post;
-            $post->setArtist($this);
-        }
-
-        return $this;
-    }
-
-    public function removePost(Post $post): self
-    {
-        if ($this->posts->removeElement($post)) {
-            // set the owning side to null (unless already changed)
-            if ($post->getArtist() === $this) {
-                $post->setArtist(null);
-            }
-        }
-
-        return $this;
+        return (string) $this->getId();
     }
 }

@@ -1,0 +1,223 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HOMEPAGE */
+.section {
+    background: linear-gradient(136.16deg, 
+    rgba(46, 9, 22, 0.97) 12.91%, 
+    rgba(32, 10, 43, 0.69) 87.68%
+    );
+}
+
+.section .container {
+    height: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+/* header */
+header {
+    position: relative;
+}
+
+.section .container header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* menu */
+.section .container nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section .container nav a {
+    margin-left: 60px;
+    color: white;
+    font-size: 18px;
+}
+
+.section .container nav a:nth-child(4) {
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+/* search input */
+.search {
+    display: flex;
+    position: absolute; /* compared to header */
+    right: 500px;
+}
+
+.search .input-search {
+    border: 0;
+    padding: 10px;
+    font-size: 15px;
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+.search-btn {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 3px;
+}
+
+.search .input-search,
+.search-btn,
+button.close-search {
+    outline: none;
+}
+
+.search.active .input-search {
+    width: 200px;
+}
+
+button.close-search {
+    background-color: white;
+    border: 0;
+    cursor: pointer;
+    padding: 15px;
+}
+
+/* hide and show search bar in search_bar.js */
+.hidden {
+    display: none;
+}
+
+
+
+/* hero banner */
+.section .container .hero{
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .container .hero .hero-left{
+    padding-top: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section .container .hero .hero-right{
+    padding: 200px 0px 0px 150px;
+}
+
+h1,
+.section .container .hero .hero-right .bloc-text,
+.section .container .hero .hero-right .bloc-button a {
+    color: white;
+}
+
+.section .container .hero .hero-right .bloc-text span{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.section .container .hero .hero-right .bloc-text h1{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 68px;
+    line-height: 109%;
+    margin: 14px 0px;
+}
+
+.section .container .hero .hero-right .bloc-text p{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 180%;
+    margin: 25px 0px;
+}
+
+.section .container .hero .hero-right .bloc-button {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.section .container .hero .hero-right .bloc-button .home-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .container .hero .hero-right .bloc-button .latest,
+.section .container .hero .hero-right .bloc-button .twitter-icon {
+    padding: 10px 20px;
+}
+
+.section .container .hero .hero-right .bloc-button .latest a,
+.section .container .hero .hero-right .bloc-button .twitter-icon a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* posts */
+.post-container {
+    padding-top: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post-container .post-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+}
+
+#post-thumbnail.post-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 0px 60px 0px;
+    width: 500px;
+    border: 1px solid white;
+}
+
+.post-artist-name {
+    padding-bottom: 15px;
+}
+
+/* footer */
+.footer-links {
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer-links .test{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
