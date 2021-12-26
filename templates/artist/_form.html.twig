@@ -1,0 +1,11 @@
+{{ form_widget(artistForm._token) }}
+{{ form_errors(artistForm) }}
+
+<div class="add-artist-fields">
+    {{ form_row(artistForm.name, {'attr': {'placeholder': 'Artist name ...'}}) }}
+    {{ form_row(artistForm.description, {'attr': {'placeholder': 'Description ...'}}) }}
+    <img src="" width="325" height="200">
+    <div class="form-options">
+        <button type="button" class="btn-remove">Delete</button>
+    </div>
+</div>

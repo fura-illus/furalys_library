@@ -7,7 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* HOMEPAGE */
 .section {
     background: linear-gradient(136.16deg, 
     rgba(46, 9, 22, 0.97) 12.91%, 
@@ -25,6 +24,12 @@
 /* header */
 header {
     position: relative;
+}
+
+.site-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
 }
 
 .section .container header {
@@ -99,8 +104,7 @@ button.close-search {
     display: none;
 }
 
-
-
+/* HOMEPAGE */
 /* hero banner */
 .section .container .hero{
     height: 80%;
@@ -220,4 +224,13 @@ h1,
     display: flex;
     justify-content: space-between;
     width: 80%;
+}
+
+/* ARTIST PAGE */
+.add-artist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 88vh;
 }

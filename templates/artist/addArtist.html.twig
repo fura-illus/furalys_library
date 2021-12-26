@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+    {% block container %}
+        <div class="add-artist">
+            {{ form_start(artistForm) }}
+                {{ include("artist/_form.html.twig", {form: artistForm}) }}
+                <div class="btn-add">
+                    <button class="btn-add-artist">Add new artist</button>
+                </div>
+            {{ form_end(artistForm, {render_rest: false}) }}
+        </div>
+    {% endblock %}
