@@ -1,5 +1,17 @@
 {% extends 'layout.html.twig' %}
 
     {% block container %}
-        <a href="{{path('artist_add')}}" class="btn add-new-artist">Add a new artist</a>
+        <div class="show-artist">
+            <div class="add-new-artist">
+                <a href="{{path('artist_add')}}">Add a new artist</a>
+            </div>
+            <div class="artist-group">
+                {% for artist in artists %}
+                <div class="artist-avatar">
+                    <a href="{{ path('artist_infos', {'name' : artist.name}) }}">{{ artist.name }}</a>
+                    <img src="{{ artist.avatar }}" alt="" width="150" height="200">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     {% endblock %}

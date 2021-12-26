@@ -212,6 +212,12 @@ h1,
 .post-artist-name {
     padding-bottom: 15px;
 }
+.post-artist-name a {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+}
 
 /* footer */
 .footer-links {
@@ -226,11 +232,61 @@ h1,
     width: 80%;
 }
 
+
 /* ARTIST PAGE */
+.show-artist {
+    height: 88vh;
+}
+
+.add-new-artist {
+    padding-top: 60px;
+    color: white;
+}
+.add-new-artist a {
+    color: white;
+}
+
+.artist-group {
+    display: flex;
+    flex-flow: row wrap;
+    padding-right: 30px;
+}
+
+.artist-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 60px 0px 0px;
+}
+.artist-avatar a{
+    font-size: 2em;
+    color: white;
+}
+
+
+/* SHOW ARTIST PAGE */
 .add-artist {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: 88vh;
+}
+
+
+/* INFOS ARTIST PAGE */
+.artist-infos {
+    height: 88vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.infos-right .artist-name,
+.infos-right .artist-description,
+.infos-right .artist-links h2,
+.infos-right .artist-links a {
+    color: white;
 }
