@@ -2,7 +2,7 @@
 
     {% block container %}
         <div class="add-artist">
-            {{ form_start(artistForm) }}
+            {{ form_start(artistForm, {'attr' : {'class' : 'artist-form'}}) }}
                 {{ include("artist/_form.html.twig", {form: artistForm}) }}
                 <div class="btn-add">
                     <button class="btn-add-artist">Add new artist</button>

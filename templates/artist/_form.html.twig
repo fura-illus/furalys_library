@@ -1,11 +1,23 @@
 {{ form_widget(artistForm._token) }}
 {{ form_errors(artistForm) }}
 
+<div class="add-avatar">
+    <h1>New artist</h1>
+    <h2>Add an avatar (mandatory)</h2>
+    <div class="media">
+        <div class="media-picture">
+            {{ form_widget(form.avatarFile, {'attr' : {'accept' : 'image/*', 'class' : 'media-input', 'onchange' : "previewFile(event)"}}) }}
+            <label for="artist_avatarFile">
+                <img src="https://bit.ly/3ubuq5o" id="preview" width="230" height="250">
+                <div>
+                    <span>+</span>
+                </div>
+            </label>
+        </div>
+    </div>
+</div>
+
 <div class="add-artist-fields">
     {{ form_row(artistForm.name, {'attr': {'placeholder': 'Artist name ...'}}) }}
     {{ form_row(artistForm.description, {'attr': {'placeholder': 'Description ...'}}) }}
-    <img src="" width="325" height="200">
-    <div class="form-options">
-        <button type="button" class="btn-remove">Delete</button>
-    </div>
 </div>

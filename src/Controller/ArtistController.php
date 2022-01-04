@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Artist;
 use App\Form\ArtistType;
-use App\Service\AddArtist;
+use App\Service\HandleArtist;
 use App\Repository\ArtistRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -33,12 +33,12 @@ class ArtistController extends AbstractController
     /**
      * @Route("/artist/new", name="artist_add")
      */
-    public function addArtist(Request $request, AddArtist $illustrator): Response
+    public function addArtist(Request $request, HandleArtist $handleArtist): Response
     {
         $artist = new Artist();
         $form = $this->createForm(ArtistType::class, $artist)->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $illustrator->addArtist($artist);
+            $handleArtist->addArtist($artist);
             return $this->redirectToRoute('artist_show');
         }
 

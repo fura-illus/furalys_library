@@ -16,7 +16,7 @@ class ArtistType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => 'Artist name',
+                'label' => 'Artist name (mandatory)',
                 'row_attr' => [
                     'class' => 'artist-name-input'
                 ],
@@ -28,7 +28,6 @@ class ArtistType extends AbstractType
                 ],
             ))
             ->add('avatarFile', FileType::class, [
-                'label' => 'Select an image',
             ])
             ->add('link')
         ;
