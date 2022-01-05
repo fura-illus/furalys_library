@@ -20,6 +20,19 @@
     {% endblock %}
     
     {% block body %}
+        <!-- SUCCESS FLASH MESSAGE AFTER TRICK SUBMISSION -->
+        {% for message in app.flashes('success') %}
+            <div id="flash-notice" class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <!-- ERROR FLASH MESSAGE AFTER TRICK SUBMISSION -->
+        {% for message in app.flashes('error') %}
+            <div id="flash-notice" class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <!-- END FLASH MESSAGES -->
         <div class="section">
             <div class="container">
                 <!-- MAIN MENU -->

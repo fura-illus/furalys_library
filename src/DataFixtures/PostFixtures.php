@@ -9,9 +9,17 @@ use App\Entity\Artist;
 use App\Entity\Category;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class PostFixtures extends Fixture
 {
+    protected $slugger;
+
+    public function __construct(SluggerInterface $slugger)
+    {
+        $this->slugger = $slugger;
+    }
+
     public function load(ObjectManager $manager): void
     {
         $artists = [
@@ -56,6 +64,7 @@ class PostFixtures extends Fixture
         ];
 
         foreach($artists as $artist) {
+            $artist->setSlug($this->slugger->slug($artist->getName())->lower()->toString());
             $manager->persist($artist);
         }
 
