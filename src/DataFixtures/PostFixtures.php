@@ -24,11 +24,11 @@ class PostFixtures extends Fixture
     {
         $artists = [
             'ヨシモト' => (new Artist())->setName('ヨシモト')
-                                    ->setAvatar('img/uploads/artists-avatar/@_acguy__pp.jpg')
+                                    ->setAvatar('@_acguy__pp.jpg')
                                     ->setDescription('')
                                     ->setLink('https://twitter.com/_acguy_'), 
             '久保田 正輝' => (new Artist())->setName('久保田 正輝')
-                                    ->setAvatar('img/uploads/artists-avatar/@_Kmasaki_pp.jpg')
+                                    ->setAvatar('@_Kmasaki_pp.jpg')
                                     ->setDescription('Illustrator | イラストレーター
                                     ▼V娘
                                     (
@@ -42,22 +42,22 @@ class PostFixtures extends Fixture
                                     http://twpf.jp/_Kmasakiを確認の上メールもしくはDMまでお願いします。')
                                     ->setLink('https://twitter.com/_Kmasaki'),
             'トリエット' => (new Artist())->setName('トリエット')
-                                    ->setAvatar('img/uploads/artists-avatar/@Tiamant_Torriet_pp.jpg')
+                                    ->setAvatar('@Tiamant_Torriet_pp.jpg')
                                     ->setDescription('Symbole emailLandauce4@gmail.com
                                     Cœur violetFANBOX : http://tiamant-torriet.fanbox.cc
                                     OC : ハリ(Hari Priite)')
                                     ->setLink('https://twitter.com/Tiamant_Torriet'),
             'DuDuLtv' => (new Artist())->setName('DuDuLtv')
-                                    ->setAvatar('img/uploads/artists-avatar/@DuDuLtv_pp.jpg')
+                                    ->setAvatar('@DuDuLtv_pp.jpg')
                                     ->setDescription('Artist / Animator | アニメーター')
                                     ->setLink('https://twitter.com/DuDuLtv'),
             'sydsir' => (new Artist())->setName('sydsir')
-                                    ->setAvatar('img/uploads/artists-avatar/@sydsir_pp.jpg')
+                                    ->setAvatar('@sydsir_pp.jpg')
                                     ->setDescription('i disappeared for like 4 yrs so understandably i am not a person but a concept Drapeau de la ChineDrapeau du Canada 
                                     she/her | currently @ n*tflix animation')
                                     ->setLink('https://twitter.com/sydsir'),
             'dya rikku' => (new Artist())->setName('dya rikku')
-                                    ->setAvatar('img/uploads/artists-avatar/@dyarikku_pp.jpg')
+                                    ->setAvatar('@dyarikku_pp.jpg')
                                     ->setDescription('VT - 000 ɢʟɪᴛᴄʜᴇᴅ 2ᴅ ᴀʀᴛɪꜱᴛ, ʟ2ᴅ ʀɪɢɢᴇʀ ᴀɴᴅ ᴠᴛᴜʙᴇʀ. @twitch ᴀɴᴅ @discord ᴘᴀʀᴛɴᴇʀ. 
                                     #dyartikku #rikkuhands ᴄᴏᴍᴍɪꜱꜱɪᴏɴꜱ ᴄʟᴏꜱᴇᴅ http://dyarikku.com')
                                     ->setLink('https://twitter.com/dyarikku')

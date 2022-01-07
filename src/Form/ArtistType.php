@@ -16,7 +16,7 @@ class ArtistType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' => 'Artist name (mandatory)',
+                'label' => 'Artist name (*)',
                 'row_attr' => [
                     'class' => 'artist-name-input'
                 ],

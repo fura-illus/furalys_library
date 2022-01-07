@@ -314,7 +314,7 @@ h1,
     flex-direction: column;
 }
 
-/* custom input */
+/* custom select avatar input*/
 .media-input {
     display: none;
 }
@@ -332,4 +332,9 @@ h1,
 
 .add-avatar .media .media-picture div span {
     font-size:40px;
+}
+
+/* add new artist btn */
+.btn-add-artist {
+    cursor: pointer;
 }

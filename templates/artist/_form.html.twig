@@ -3,7 +3,8 @@
 
 <div class="add-avatar">
     <h1>New artist</h1>
-    <h2>Add an avatar (mandatory)</h2>
+    <p>Fields with a * are mandatory</p>
+    <h2>Add an avatar (*)</h2>
     <div class="media">
         <div class="media-picture">
             {{ form_widget(form.avatarFile, {'attr' : {'accept' : 'image/*', 'class' : 'media-input', 'onchange' : "previewFile(event)"}}) }}

@@ -8,8 +8,8 @@
             <div class="artist-group">
                 {% for artist in artists %}
                 <div class="artist-avatar">
-                    <a href="{{ path('artist_infos', {'name' : artist.name}) }}">{{ artist.name }}</a>
-                    <img src="{{ artist.avatar }}" alt="" width="220" height="240">
+                    <a href="{{ path('artist_infos', {'slug' : artist.slug}) }}">{{ artist.name }}</a>
+                    <img src="{{ asset('img/uploads/artists-avatar/'~artist.avatar) }}" alt="" width="220" height="240">
                 </div>
                 {% endfor %}
             </div>

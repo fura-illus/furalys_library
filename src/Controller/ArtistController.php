@@ -57,12 +57,13 @@ class ArtistController extends AbstractController
     }
 
     /**
-     * @Route("/artist/{name}", name="artist_infos")
+     * @Route("/artist/{slug}", name="artist_infos")
      */
     public function artistInfos(Artist $artist): Response
     {
         return $this->render('artist/artistInfos.html.twig', [
             'artist' => $artist,
+            'slug' => $artist->getSlug(),
         ]);
     }
 }
