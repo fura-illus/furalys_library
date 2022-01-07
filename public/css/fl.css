@@ -7,7 +7,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* HOMEPAGE */
 .section {
     background: linear-gradient(136.16deg, 
     rgba(46, 9, 22, 0.97) 12.91%, 
@@ -22,9 +21,25 @@
     padding-top: 50px;
 }
 
+/* flash messages when form submit */
+#flash-notice {
+    position: fixed;
+    top: 16%;
+    left: 41%;
+    color: green;
+    font-size: 20PX;
+    border: 1px solid green;
+}
+
 /* header */
 header {
     position: relative;
+}
+
+.site-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
 }
 
 .section .container header {
@@ -99,8 +114,7 @@ button.close-search {
     display: none;
 }
 
-
-
+/* HOMEPAGE */
 /* hero banner */
 .section .container .hero{
     height: 80%;
@@ -208,6 +222,12 @@ h1,
 .post-artist-name {
     padding-bottom: 15px;
 }
+.post-artist-name a {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+}
 
 /* footer */
 .footer-links {
@@ -220,4 +240,101 @@ h1,
     display: flex;
     justify-content: space-between;
     width: 80%;
+}
+
+
+/* ARTIST PAGE */
+.show-artist {
+    height: 88vh;
+}
+
+.add-new-artist {
+    padding-top: 60px;
+    color: white;
+}
+.add-new-artist a {
+    color: white;
+}
+
+.artist-group {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 110px;
+}
+
+.artist-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 30px 0px 0px;
+}
+.artist-avatar a{
+    font-size: 2em;
+    color: white;
+}
+
+
+/* SHOW ARTIST PAGE */
+.add-artist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 88vh;
+}
+
+
+/* INFOS ARTIST PAGE */
+.artist-infos {
+    height: 88vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.infos-right .artist-name,
+.infos-right .artist-description,
+.infos-right .artist-links h2,
+.infos-right .artist-links a {
+    color: white;
+}
+
+/* ARTIST FORM PAGE */
+.artist-form,
+.media,
+.add-avatar,
+.add-artist-fields,
+.artist-name-input,
+.artist-description-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* custom select avatar input*/
+.media-input {
+    display: none;
+}
+
+.add-avatar .media .media-picture div {
+    position:relative;
+    height:40px;
+    margin-top:-47px;
+    background:rgba(0,0,0,0.5);
+    text-align:center;
+    line-height:40px;
+    color:#f5f5f5;
+    font-weight:600;
+}
+
+.add-avatar .media .media-picture div span {
+    font-size:40px;
+}
+
+/* add new artist btn */
+.btn-add-artist {
+    cursor: pointer;
 }

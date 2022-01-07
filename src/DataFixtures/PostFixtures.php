@@ -9,21 +9,62 @@ use App\Entity\Artist;
 use App\Entity\Category;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class PostFixtures extends Fixture
 {
+    protected $slugger;
+
+    public function __construct(SluggerInterface $slugger)
+    {
+        $this->slugger = $slugger;
+    }
+
     public function load(ObjectManager $manager): void
     {
         $artists = [
-            'ヨシモト' => (new Artist())->setName('ヨシモト')->setAvatar('../../public/img/uploads/artists-avatar/@_acguy__pp.jpg'), 
-            '久保田 正輝' => (new Artist())->setName('久保田 正輝')->setAvatar('../../public/img/uploads/artists-avatar/@_Kmasaki_pp.jpg'),
-            'トリエット' => (new Artist())->setName('トリエット')->setAvatar('../../public/img/uploads/artists-avatar/@Tiamant_Torriet_pp.jpg'),
-            'DuDuLtv' => (new Artist())->setName('DuDuLtv')->setAvatar('../../public/img/uploads/artists-avatar/@DuDuLtv_pp.jpg'),
-            'sydsir' => (new Artist())->setName('sydsir')->setAvatar('../../public/img/uploads/artists-avatar/@sydsir_pp.jpg'),
-            'dya rikku' => (new Artist())->setName('dya rikku')->setAvatar('../../public/img/uploads/artists-avatar/@dyarikku_pp.jpg')
+            'ヨシモト' => (new Artist())->setName('ヨシモト')
+                                    ->setAvatar('@_acguy__pp.jpg')
+                                    ->setDescription('')
+                                    ->setLink('https://twitter.com/_acguy_'), 
+            '久保田 正輝' => (new Artist())->setName('久保田 正輝')
+                                    ->setAvatar('@_Kmasaki_pp.jpg')
+                                    ->setDescription('Illustrator | イラストレーター
+                                    ▼V娘
+                                    (
+                                    @Honoka_Himura
+                                    ) (
+                                    @cherry_osaki
+                                    )
+                                    ▼ポートフォリオ
+                                    http://masakiillust.tumblr.com
+                                    ▼お仕事のご依頼
+                                    http://twpf.jp/_Kmasakiを確認の上メールもしくはDMまでお願いします。')
+                                    ->setLink('https://twitter.com/_Kmasaki'),
+            'トリエット' => (new Artist())->setName('トリエット')
+                                    ->setAvatar('@Tiamant_Torriet_pp.jpg')
+                                    ->setDescription('Symbole emailLandauce4@gmail.com
+                                    Cœur violetFANBOX : http://tiamant-torriet.fanbox.cc
+                                    OC : ハリ(Hari Priite)')
+                                    ->setLink('https://twitter.com/Tiamant_Torriet'),
+            'DuDuLtv' => (new Artist())->setName('DuDuLtv')
+                                    ->setAvatar('@DuDuLtv_pp.jpg')
+                                    ->setDescription('Artist / Animator | アニメーター')
+                                    ->setLink('https://twitter.com/DuDuLtv'),
+            'sydsir' => (new Artist())->setName('sydsir')
+                                    ->setAvatar('@sydsir_pp.jpg')
+                                    ->setDescription('i disappeared for like 4 yrs so understandably i am not a person but a concept Drapeau de la ChineDrapeau du Canada 
+                                    she/her | currently @ n*tflix animation')
+                                    ->setLink('https://twitter.com/sydsir'),
+            'dya rikku' => (new Artist())->setName('dya rikku')
+                                    ->setAvatar('@dyarikku_pp.jpg')
+                                    ->setDescription('VT - 000 ɢʟɪᴛᴄʜᴇᴅ 2ᴅ ᴀʀᴛɪꜱᴛ, ʟ2ᴅ ʀɪɢɢᴇʀ ᴀɴᴅ ᴠᴛᴜʙᴇʀ. @twitch ᴀɴᴅ @discord ᴘᴀʀᴛɴᴇʀ. 
+                                    #dyartikku #rikkuhands ᴄᴏᴍᴍɪꜱꜱɪᴏɴꜱ ᴄʟᴏꜱᴇᴅ http://dyarikku.com')
+                                    ->setLink('https://twitter.com/dyarikku')
         ];
 
         foreach($artists as $artist) {
+            $artist->setSlug($this->slugger->slug($artist->getName())->lower()->toString());
             $manager->persist($artist);
         }
 

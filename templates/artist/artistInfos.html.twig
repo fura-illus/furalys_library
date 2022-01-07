@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+    {% block container %}
+        <div class="artist-infos">
+            <div class="infos-left">
+                <div class="artist-avatar">
+                    <img src="{{ asset('img/uploads/artists-avatar/'~artist.avatar) }}" alt="" width="461" height="439">
+                </div>
+                <div class="change-avatar">
+                </div>
+            </div>
+            <div class="infos-right">
+                <button type="submit">Edit informations</button>
+                <div class="artist-name">
+                    <h2>{{ artist.name }}</h2>
+                </div>
+                <div class="artist-description">
+                    <p>{{ artist.description | raw }}</p>
+                </div>
+                <div class="artist-links">
+                    <h2>Links :</h2>
+                    <a href="{{ artist.link }}" target="_blank">{{ artist.link }}</a>
+                </div>
+            </div>
+        </div>
+    {% endblock %}

@@ -26,7 +26,6 @@ videos.forEach(function(videos)
 {
     videosArray.push(videos)
 });
-console.log(videosArray);
 
 videosArray.forEach(function(videosArray) 
 {
@@ -39,4 +38,3 @@ videosArray.forEach(function(videosArray)
         videosArray.className = "vid-post"
     }
 });
-console.log(videosArray);

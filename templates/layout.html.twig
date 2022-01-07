@@ -16,9 +16,23 @@
     <script src="/js/hide_empty_post.js"></script>
     <script src="/js/search_bar.js"></script>
     <script src="/js/load_more_posts.js"></script>
+    <script src="/js/display_avatar_on_select.js"></script>
     {% endblock %}
     
     {% block body %}
+        <!-- SUCCESS FLASH MESSAGE AFTER TRICK SUBMISSION -->
+        {% for message in app.flashes('success') %}
+            <div id="flash-notice" class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <!-- ERROR FLASH MESSAGE AFTER TRICK SUBMISSION -->
+        {% for message in app.flashes('error') %}
+            <div id="flash-notice" class="alert alert-danger">
+                {{ message }}
+            </div>
+        {% endfor %}
+        <!-- END FLASH MESSAGES -->
         <div class="section">
             <div class="container">
                 <!-- MAIN MENU -->
@@ -26,13 +40,13 @@
                     <header>
                         <!-- LOGO -->
                         <div class="header-left">
-                            <h1>Furalys Library</h1>
+                            <a href="{{path('homepage')}}" class="site-title">Furalys Library</a>
                         </div>
                         <!-- MENU -->
                         <div class="header-right">
                             <nav>
                                 <a href="#" class="search-link">Search</a>
-                                <a href="#">Artists</a>
+                                <a href="{{path('artist_show')}}">Artists</a>
                                 <a href="#">Categories</a>
                                 <a href="#">Own Creations</a>
                                 <div class="search hidden">
