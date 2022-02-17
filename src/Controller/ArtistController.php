@@ -27,7 +27,7 @@ class ArtistController extends AbstractController
     /**
      * @Route("/artist", name="artist_show")
      */
-    public function showArtist(): Response
+    public function showArtists(): Response
     {
         return $this->render('artist/showArtist.html.twig', [
             'artists' => $this->artistRepository->findAll()

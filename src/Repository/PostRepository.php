@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Post;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\Category;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Post|null find($id, $lockMode = null, $lockVersion = null)
@@ -25,6 +26,18 @@ class PostRepository extends ServiceEntityRepository
         ->orderBy('p.id', 'desc')
         ->setFirstResult(($page-1) * $length)
         ->setMaxResults($length)
+        ;
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+    public function getCategoryPosts(int $page, int $length, Category $category)
+    {
+        $queryBuilder = $this->createQueryBuilder('c')
+            ->where('c.category = :category')
+            ->setParameter('category', $category)
+            ->orderBy('c.id', 'desc')
+            ->setFirstResult(($page-1) * $length)
+            ->setMaxResults($length)
         ;
         return $queryBuilder->getQuery()->getResult();
     }

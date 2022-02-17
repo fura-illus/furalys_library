@@ -17,6 +17,7 @@
     <script src="/js/search_bar.js"></script>
     <script src="/js/load_more_posts.js"></script>
     <script src="/js/display_avatar_on_select.js"></script>
+    <script src="/js/load_category_posts.js"></script>
     {% endblock %}
     
     {% block body %}
@@ -47,7 +48,7 @@
                             <nav>
                                 <a href="#" class="search-link">Search</a>
                                 <a href="{{path('artist_show')}}">Artists</a>
-                                <a href="#">Categories</a>
+                                <a href="{{path('category_show')}}">Categories</a>
                                 <a href="#">Own Creations</a>
                                 <div class="search hidden">
                                     <button class="close-search">

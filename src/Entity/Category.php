@@ -22,6 +22,12 @@ class Category
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Post::class, inversedBy="category")
+     * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
+     */
+    private $post;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPost(): ?Post
+    {
+        return $this->post;
+    }
+
+    public function setPost(?Post $post): self
+    {
+        $this->post = $post;
 
         return $this;
     }
