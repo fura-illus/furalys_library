@@ -338,3 +338,20 @@ h1,
 .btn-add-artist {
     cursor: pointer;
 }
+
+
+/* CATEGORY PAGE */
+.category-container {
+    height: 88vh;
+}
+
+.category-section {
+    padding-top: 200px;
+}
+
+.category-section a {
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
